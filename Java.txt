@@ -1,0 +1,235 @@
+			
+			<--- Classes --->
+
+		<- Object ->
+
+getClass() -> retorna um objeto Class que representa a classe do objeto
+
+equals(Object obj) -> compara o objeto atual com o objeto especificado e retorna true ou false
+
+hashCode() -> retorna um valor hash para o objeto
+
+toString() -> retorna uma representação em string do objeto
+
+
+		<- String ->
+
+String minhaString = new String() -> declara/inicializa a string minhaString
+
+input = String.format("text %d", x) -> adiciona a string ao input, podendo usar variaveis
+
+trim() -> remove os espaços em branco no inico e do final da string
+
+length() -> Retorna o número de caracteres na string
+
+charAt(int index) -> Retorna o caractere na posição especificada
+
+Integer.parseInt(String) -> Converte uma string em um valor inteiro
+Float.parseFloat(String) -> Converte uma string em um valor de ponto flutuante
+Double.parseDouble(String) -> Converte uma string em um valor de ponto flutuante de precisão dupla
+
+Integer.toString(x) -> converte um int para uma string
+Float.toString(x) -> converte um float para string 
+Double.toString(x) -> converte um double para string
+
+substring(int beginIndex, int endIndex) -> Retorna uma nova string do index begin ate o end, da original
+
+replace(CharSequence target, CharSequence c) -> troca o char do target por c, na string ( ou string ) 
+
+compareTo(String anotherString) -> Compara duas strings lexicograficamente e retorna um int para, maior, menor ou igual
+
+compareToIgnoreCase(String str) -> Compara duas strings lexicograficamente, ignorando diferenças de maiúsculas e minúsculas
+
+equals(Object anObject) -> Compara esta string com o objeto especificado, retorna true ou false
+
+equalsIgnoreCase(String anotherString) -> Compara esta String com outra String, ignorando considerações de maiúsculas e minúsculas
+
+toCharArray() -> transforma a string str em um array de char
+
+contains(CharSequence) -> retorna true caso tenha esta sequencia na string
+
+split(String regex) -> divide uma string em varias substrings com base no delimitador passado como argumento
+( ex: String[] tokens = input.split(";") -> pega a string input, e quebra em varias substring a cada ";" encontrado, e adicona cada uma em uma posição do array )
+
+
+
+		<- StringBuilder ->
+
+import java.lang.StringBuilder;
+
+StringBuilder str = new StringBuilder() -> inicializa str vazia com stringbuilder
+
+append(str) -> adiciona a string ou char a posição final
+
+delete(int i, int j) -> remove os caracteres de i ate j - 1
+
+insert(int i, String str) -> insere a string começando na posição i
+
+length -> Retorna o número de caracteres atualmente em um StringBuilder.
+
+capacity -> Retorna o número de caracteres que podem ser armazenados sem alocar mais memória.
+
+ensureCapacity -> Garante que o StringBuilder tenha pelo menos a capacidade especificada.
+
+setLength -> Aumenta ou diminui o comprimento do StringBuilder.
+
+charAt -> Retorna o caractere em uma posição específica.
+
+reverse -> Retorna os caracteres invertidos
+
+toString() -> transformar em string
+
+
+
+		<- Arrays ->
+
+import java.util.Arrays;
+
+asList -> transfoma um array em lista
+
+toString -> transforma o array em uma string
+
+equals(T[] a, T[] a2) -> compara se as listas sao iguais
+
+
+
+		<- ArrayList ->
+
+import java.util.ArrayList;
+
+ArrayList<String> minhaLista = new ArrayList<String>() -> declara/inicializa a lista ( podendo ser de String, int... etc )
+
+addAll(Arrays.asList(String[] str)) -> transforma o array str em uma lista e adiciona todos os elementos a lista desejada
+
+add(Object element) -> Adiciona o elemento especificado no final da lista
+
+add(int index, Object element) -> Insere o elemento especificado na posição indicada da lista
+
+clear() -> Remove todos os elementos da lista
+
+contains(Object element) -> Retorna true se a lista contém o elemento especificado e false caso contrário
+
+get(int index) -> Retorna o item em uma posição de índice especificada
+
+indexOf(Object o) -> Retorna o índice da primeira ocorrência do elemento especificado na lista, ou -1 se a lista não contém o elemento
+
+remove(int index) -> Remove o elemento na posição especificada na lista
+
+size() -> Retorna o número de elementos na lista
+
+
+		<- Scanner ->
+
+import java.util.Scanner;
+
+Scanner sc = new Scanner(System.in) - > declara o scanner
+
+next() -> Retorna o próximo token
+
+next().charAt(0) -> retorna primeiro char
+
+nextInt() -> Lê um número inteiro
+
+nextDouble() -> Lê um número de ponto flutuante
+
+nextLine() -> Lê uma linha de texto
+
+nextBoolean() -> Lê um valor booleano
+
+( obs: BufferedReader possui um buffer maior que o do scanner, sendo melhor para ler grande quantidade de dados )
+( obs: InputStreamReader é usado para ler fluxos de uma maneira geral com controle sobre como fazer a leitura, embora não se preocupe com o conteúdo )
+( obs: InputStreamReader e BufferedReader são normalmente usados juntos, onde InputStreamReader faz a leitura de bytes e BufferedReader armazena esses bytes em um buffer para leitura eficiente )
+( obs: A classe Scanner tambem pode ser usada pra ler arquivos txt juntamente com a classe file )
+
+Scanner arqSc = new Scanner(new File("arquivo.txt")) -> declara arqSc para ler o txt
+
+hasNextLine() -> volta true se ainda tiver conteudo para ler no file ( arqSc.hasNextLine() )
+
+nextLine() -> le uma linha no arquivo ( string linha = arqSc.nextLine() )
+
+
+		<- File ->
+
+import java.io.File;
+
+File arq = new File("arquivo.txt") -> cria o arquivo arq
+
+arq.delete() -> apaga o file arq criado
+
+if (file.createNewFile()) {
+    Arquivo criado
+} else {
+    O arquivo já existe
+}
+
+
+		<- RandomAccessFile ->
+
+import java.io.RandomAccessFile;
+
+RandomAccessFile raf = new RandomAccessFile("arquivo.txt", "rw") -> declara o raf para ler e escrever
+
+raf.close(); -> fecha o raf
+
+	Seek
+
+arquivo.seek(posicao); // Move para a posição específica
+arquivo.seek(arquivo.length()); // Move para o fim do arquivo
+arquivo.seek(0); // Move para o início do arquivo
+
+	Ler
+
+read() -> Lê um único byte de dados do arquivo
+readLine() -> Lê uma linha
+read(byte[] b) -> Lê até b.length bytes de dados do arquivo para um array de bytes
+read(byte[] b, int off, int len) -> Lê até len bytes de dados do arquivo para um array de bytes, começando na posição off
+readBoolean() -> Lê um valor booleano do arquivo
+readByte() -> Lê um valor de oito bits assinado do arquivo
+readChar() -> Lê um caractere do arquivo
+readDouble() -> Lê um valor double do arquivo
+readFloat() -> Lê um valor float do arquivo
+readFully(byte[] b) -> Lê b.length bytes do arquivo para o array de bytes
+readFully(byte[] b, int off, int len) -> Lê exatamente len bytes do arquivo para o array de bytes, começando na posição off
+readInt() -> Lê um inteiro de 4 bytes assinado do arquivo
+
+	Escrever
+
+write(int b) -> Escreve o byte menos significativo de um inteiro
+write(byte[] b) -> Escreve b.length bytes do array de bytes especificado para o arquivo, começando no índice
+write(byte[] b, int off, int len) -> Escreve len bytes do array de bytes especificado começando no deslocamento off para o arquivo
+writeBoolean(boolean v) -> Escreve um valor booleano para o arquivo
+writeByte(int v) -> Escreve um byte para o arquivo
+writeBytes(String s) -> Escreve a string como uma sequência de bytes
+writeChar(int v) -> Escreve um caractere para o arquivo
+writeChars(String s) -> Escreve uma string para o arquivo
+writeDouble(double v) -> Escreve um valor double para o arquivo
+writeFloat(float v) -> Escreve um valor float para o arquivo
+writeInt(int v) -> Escreve um inteiro para o arquivo
+writeLong(long v) -> Escreve um long para o arquivo
+writeShort(int v) -> Escreve um short para o arquivo
+
+( obs: ler e escrever no txt em bytes )
+
+
+		<- Date ->
+
+import java.util.Date
+
+Date data = new Date() -> declara o obj date como data
+
+getTime() -> Retorna o número de milissegundos desde a época Unix (00:00:00 UTC em 1 de janeiro de 1970) até a data atual
+
+setTime(long time) -> Define a data e hora de acordo com o argumento de milissegundos
+
+before(Date when) -> Verifica se a data atual é anterior à data especificada
+
+after(Date when) -> Verifica se a data atual é posterior à data especificada
+
+equals(Object obj) -> Compara duas datas para igualdade
+
+
+
+
+
+
+

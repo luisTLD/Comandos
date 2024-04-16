@@ -1,0 +1,27 @@
+git init -> Inicializa um novo repositório Git no diretório atual
+
+git status -> Mostra o estado atual do repositório, incluindo quaisquer alterações não rastreadas ou não confirmadas
+
+git add . -> Adiciona todos os arquivos modificados no diretório atual ao índice para o próximo commit
+
+git commit -m "mensagem" -> Cria um novo commit com as alterações adicionadas ao índice e inclui uma mensagem de log descritiva
+
+git remote add origin "link" -> Conecta o repositório local ao repositório remoto no GitHub
+
+git branch -M main -> Renomeia a branch atual do seu repositório Git local para main
+
+git push -u origin main -> Envia as alterações da branch main para o repositório remoto no GitHub
+
+git branch -> Lista todas as branches no repositório e indica a branch atual
+
+git checkout "branch" -> Muda para a branch especificada
+
+git merge "branch" -> Une a branch especificada à branch atual, combinando as alterações
+
+git clone "link" "nome do projeto" -> Clona o repositório remoto para um novo diretório local com o nome especificado
+
+git pull -> Atualiza o repositório local com as alterações mais recentes do repositório remoto.
+
+git log -> Mostra o histórico de commits na branch atual.
+
+git diff -> Mostra as diferenças entre o índice e a última confirmação, ou entre duas confirmações.

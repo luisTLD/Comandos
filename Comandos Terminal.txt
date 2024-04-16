@@ -1,0 +1,87 @@
+		
+
+		<--- Compilar e Executar --->
+
+
+	Java
+
+javac NomeDoArquivo.java
+java NomeDoAraquivo
+
+	Python
+
+...
+python NomeDoArquivo.py
+
+	C
+
+gcc NomeDoArquivo.c -o NomeDoPrograma
+./NomeDoPrograma
+
+	C++
+
+g++ NomeDoArquivo.cpp -o NomeDoPrograma
+./NomeDoPrograma
+
+	C#
+
+dotnet new console -o nomeDoPrograma
+dotnet build
+dotnet run
+
+	JavaScript / Node.js
+
+...
+node NomeDoArquivo.js
+
+
+
+		<--- Redirecionar Entrada e Saida ---> 
+
+	( Usar um txt como entrada, e criar um txt com a saida )
+
+	
+	CMD e Linux
+
+comando < arquivo_de_entrada
+comando > arquivo_de_saida
+comando < arquivo_de_entrada > arquivo_de_saida
+
+	PowerShell
+
+Get-Content | comando | arquivo_de_entrada
+comando | Out-File arquivo_de_saida
+Get-Content arquivo_de_entrada | comando | Out-File arquivo_de_saida
+
+
+
+		<--- Comparar dois arquuivos de texto --->
+
+	CMD
+
+fc /a arquivo1.txt arquivo2.txt
+
+	Linux
+
+diff arquivo1.txt arquivo2.txt
+
+	PowerShell
+
+Compare-Object $(Get-Content arquivo1.txt) $(Get-Content arquivo2.txt)
+
+
+
+		<--- Navegar por pastas --->
+
+
+	CMD
+
+cd C:\caminho\para\a\pasta
+
+	Linux
+
+cd /caminho/para/a/pasta
+
+	PowerShell
+
+Set-Location -Path C:\caminho\para\a\pasta

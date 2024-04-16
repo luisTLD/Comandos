@@ -1,0 +1,138 @@
+		
+			<--- Bibliotecas e Funções --->
+
+		<stdio.h>
+
+int sscanf(const char *str, const char *format, ...) -> analisa a string str no formato dado por format, e armazena os dados nas proximas variaveis ...
+ex : char data[] = "12/04/2024" -> sscanf(data, "%d/%d/%d", &dia, &mes, &ano);
+
+
+Entrada e saida
+
+FILE *arquivo
+
+arquivo = fopen("nome-do-arquivo", "modo")
+fclose(arquivo)
+
+"r" -> Abre o arquivo no modo leitura
+"w" -> Abre ou cria um arquivo de texto no modo escrita
+"a" -> Abre o arquivo no modo de inclusão (append)
+
+	escrever
+
+fprintf(arquivo, "texto %s", str) -> pode ser %d %f etc
+
+	ler
+
+fgets(str, sizeof(str), arquivo) -> le o txt ate o \n e adiciona a str
+
+fscanf(arquivo, "%[^;]", minhaString) -> le ate o parametro especificado ser encontrado, no caso ';'
+
+fscanf(arquivo, "%f", &meuFloat) -> um float do txt, pode ser %d etc
+
+fseek(FILE *pointer, long int offset, int position) - > muda a posição do ponteiro 
+
+SEEK_SET -> retorna posição do início do arquivo
+SEEK_CUR -> retorna Posição atual do ponteiro
+SEEK_END -> retorna posição do fim do arquivo
+
+exemplos: 
+fseek(arquivo, 0, SEEK_SET); // Move para o início do arquivo
+fseek(arquivo, 10, SEEK_CUR); // Move 10 bytes à frente da posição atual
+fseek(arquivo, -20, SEEK_END); // Move 20 bytes antes do fim do arquivo
+
+
+		<string.h>
+
+strlen(const char* str); -> retorna um int com o valor do tamanho da string
+
+strcpy(char* dest, const char* src); -> copia a string src para a dest
+
+strncpy(char *dest, const char *src, size_t n); -> copia n caracteres de src para dest
+
+strcat(char *dest, const char *src); -> anexa a string src no final da dest
+
+strncat(char *dest, const char *src, size_t n); -> anexa n caracteres da src ao final da dest
+
+strcmp(const char* str1, const char* str2); -> compara as duas string lexicograficamente
+
+strncmp(const char *str1, const char *str2, size_t n); -> compara ate n caracteres as strings
+
+strchr(const char *str, int c); -> retorna um ponteiro para primeira ocorrencia de um char
+
+strstr(const char *haystack, const char *needle) -> retorna um ponteiro para o inicio da primeira ocorrencia de uma substring em haystack
+
+char* strtok(char *str, const char *delim) -> dividir a string str em partes delimitadas por delim
+char* strtok(NULL, " ") -> cada chamada chama uma partição da string, e quando acaba retorna NULL
+
+
+		<math.h>
+
+pow(double base, double exponent); -> retorna base elevado a exponent
+
+sqrt(double x); -> retorna raiz quadrada de x
+
+fabs(double x); -> retorna o modulo de x ( valor positivo )
+
+		
+		<stdlib.h>
+
+malloc(size_t size); -> aloca quantidade especifica de memoria dinamicamente ( ex: array = (int*)malloc(t * sizeof(int)); )
+
+calloc(size_t num, size_t size); -> igual malloc, mas inicializa o array com 0
+
+
+realloc(void *ptr, size_t size); -> altera o tamanho de uma area de memoria previamente alocada ( ex: array = (int*)realloc(array, size * sizeof(int)); )
+free(void* ptr); -> libera a memoria alocada  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+atoi(const char* str); -> converte uma string para um int ( obs: atof e atol ( float e long )) obs: retorna 0 caso nao consiga
+
+system(const char* command); -> executa o comando no sistema operacional ( cmd / linux )
+
+	
+		<ctype.h>
+
+isalnum(int c) -> Verifica se o caractere é alfanumérico
+
+isalpha(int c) -> Verifica se o caractere é uma letra do alfabeto
+
+iscntrl(int c) -> Verifica se o caractere é um caractere de controle ( ex: \t, \r, \n, \f, \b, \0 etc )
+
+isdigit(int c) -> Verifica se o caractere é um dígito decimal
+
+isgraph(int c) -> Verifica se o caractere tem representação gráfica
+
+islower(int c) -> Verifica se o caractere é minúsculo
+
+isprint(int c) -> Verifica se o caractere é imprimível
+
+ispunct(int c) -> Verifica se o caractere é de pontuação
+
+toupper(int c) -> Converte o caractere minúsculo em maiúsculo
+
+tolower(int c) -> Converte o caractere maiúsculo em minúsculo
+
+
+		<time.h>
+
+clock(void) -> Retorna a quantidade de pulsos de clock que o processador executou desde o início do programa até o momento em que clock() foi chamado.
+
+time(time_t *ponteiro_tempo) -> Retorna a data e hora do sistema e atribui esse valor à variável passada como parâmetro
+
+difftime(time_t tempo, time_t tempo0) -> Retorna a diferença, em segundos, entre tempo e tempo
+
+ctime(const time_t *tempo) -> Retorna uma string, contendo os valores da variável *tempo, de tipo time_t, formatando as informações de data e hora
+
+
+
+
+		Struct:
+
+typedef struct{
+
+-> variaveis
+
+} "nome da struct"
+
+Depois inicializa a struct como "nome da struct" "nome desejado"
+
