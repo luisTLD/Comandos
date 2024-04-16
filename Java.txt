@@ -118,6 +118,22 @@ remove(int index) -> Remove o elemento na posição especificada na lista
 size() -> Retorna o número de elementos na lista
 
 
+		<- HashMap ->
+
+import java.util.HashMap;
+
+HashMap<Chave, Valor> "Nome do map" = new HashMap<>();
+
+get(Busca) -> retorna o valor 
+containsKey(Busca) -> retorna true ou false
+
+put(Busca, Retorno) -> adiciona um valor em uma posição chave
+
+EX: HashMap<String, Integer> mapaIdades = new HashMap<>();
+mapaIdades.put("João", 30);
+mapaIdades.get("João") -> retorna 30
+
+
 		<- Scanner ->
 
 import java.util.Scanner;
