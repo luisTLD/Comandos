@@ -93,30 +93,6 @@ equals(T[] a, T[] a2) -> compara se as listas sao iguais
 
 
 
-		<- ArrayList ->
-
-import java.util.ArrayList;
-
-ArrayList<String> minhaLista = new ArrayList<String>() -> declara/inicializa a lista ( podendo ser de String, int... etc )
-
-addAll(Arrays.asList(String[] str)) -> transforma o array str em uma lista e adiciona todos os elementos a lista desejada
-
-add(Object element) -> Adiciona o elemento especificado no final da lista
-
-add(int index, Object element) -> Insere o elemento especificado na posição indicada da lista
-
-clear() -> Remove todos os elementos da lista
-
-contains(Object element) -> Retorna true se a lista contém o elemento especificado e false caso contrário
-
-get(int index) -> Retorna o item em uma posição de índice especificada
-
-indexOf(Object o) -> Retorna o índice da primeira ocorrência do elemento especificado na lista, ou -1 se a lista não contém o elemento
-
-remove(int index) -> Remove o elemento na posição especificada na lista
-
-size() -> Retorna o número de elementos na lista
-
 
 		<- HashMap ->
 
