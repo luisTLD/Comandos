@@ -1,2 +1,2 @@
 # Comandos
-Comandos e funcoes uteis 
+Resumo de alguns comandos e funcoes basicas
