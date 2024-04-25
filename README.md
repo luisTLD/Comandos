@@ -1,2 +1,2 @@
 # Comandos
-Resumo de alguns comandos e funcoes basicas
+Resumo de alguns comandos e funções basicas
